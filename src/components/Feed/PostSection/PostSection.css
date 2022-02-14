@@ -1,0 +1,34 @@
+.postSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+    border-radius: 30px;
+    background-color: black;
+    width: 100%;
+}
+.postSectionStart{
+    width: 100%;
+}
+.postUser:hover{
+    background-color: grey;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.postUser>h5:hover{
+    color: black;
+}
+.dotIcon:hover{
+    background-color: grey;
+    border-radius: 999px;
+}
+.postBox > img{
+    width: 100%;
+    height: auto;
+}
+.likeShareComment{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}

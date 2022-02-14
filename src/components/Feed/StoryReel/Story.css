@@ -1,0 +1,15 @@
+.story{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 100ms ease-in;
+}
+.story:hover{
+    transform: scale(1.07);
+}
+.story_avatar{
+    margin: 5px;
+    border: 3px solid red;
+}

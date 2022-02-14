@@ -1,0 +1,42 @@
+.newPost > .newPostBtn {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+.newPost > .newPostBtn > .MuiSvgIcon-root {
+  font-size: xx-large;
+  color: red;
+}
+.newPost > .newPostBtn > h5 {
+  margin-left: 20px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0;
+}
+.postMiddle > .MuiButton-root {
+  color: white;
+  font-weight: 500;
+  background: red;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+    inset 2px 2px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 36px;
+}
+.postMiddle > .MuiButton-root:hover {
+  background-color: rgb(0, 255, 242);
+  color: black;
+}
+.postBottom:hover{
+    cursor: pointer;
+    background-color: grey;
+    border-radius: 10px;
+    color: black ;
+}
+.textArea {
+  width: 450px;
+  padding: 5px;
+  background-color: lightgray;
+  border-radius: 10px;
+  border: none;
+  outline-width: 0;
+}
