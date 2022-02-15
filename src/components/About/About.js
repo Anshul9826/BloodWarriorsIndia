@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react'
+import "./About.css";
 
-export class About extends Component {
-  render() {
-    return <div></div>;
-  }
+function About() {
+  return (
+    <div>About page bhi rahul dega.</div>
+  )
 }
 
-export default About;
+export default About

@@ -7,7 +7,7 @@ import StorefrontTwoToneIcon from '@mui/icons-material/StorefrontTwoTone';
 import ImportContactsTwoToneIcon from '@mui/icons-material/ImportContactsTwoTone';
 import InfoTwoToneIcon from '@mui/icons-material/InfoTwoTone';
 import AddBoxTwoToneIcon from '@mui/icons-material/AddBoxTwoTone';
-import NewPost from '../CreatePost/NewPost';
+import NewPost from './SidebarComponents/NewPost';
 function Sidebar() {
   return (
     <div className='sidebar'>
