@@ -3,35 +3,46 @@
   padding: 5px;
   box-shadow: 5px 5px 5px 2px rgba(255, 0, 0, 0.5);
 }
-.form-control:focus {
-  color: #212529;
-  background-color: #fff;
-  border-color: red;
-  box-shadow: 0 0 0 0.25rem rgba(255, 66, 66, 0.5);
-}
-.searchIcon:hover {
-  cursor: pointer;
+.logoutBtn:hover{
   background-color: grey;
-  border-radius: 999px;
-}
-.searchBar {
-    background-color: lightsalmon;
-}
-.searchBar input {
-    margin-left: 5px;
-    outline-width: 0;
-  background: transparent;
-  color: black;
-  border: none;
-}
-.headerOptions {
-    padding: 0px 25px;
-}
-.headerOptions:hover {
-    background-color: grey;
     cursor: pointer;
     border-radius: 10px;
     align-items: center;
     padding: 0 25px;
     border-bottom: none;
+}
+.headerRight{
+  display:flex;
+  align-items:center; 
+  margin-right: 10px;
+}
+.menuIcon{
+  display: none;
+}
+@media (max-width:576px) {
+  .header{
+    box-shadow: none;
+  }
+  .headerRight{
+    display: none;
+  }
+  .menuIcon{
+    display: block;
+  }
+  .menuIcon:hover{
+    background-color: grey;
+    cursor: pointer;
+  }
+}
+@media (max-width:992px) {
+  .headerRight{
+    display: none;
+  }
+  .menuIcon{
+    display: block;
+  }
+  .menuIcon:hover{
+    background-color: grey;
+    cursor: pointer;
+  }
 }

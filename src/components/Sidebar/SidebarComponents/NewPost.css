@@ -9,6 +9,7 @@
   color: red;
 }
 .newPost > .newPostBtn > h5 {
+  font-size: 0.9rem;
   margin-left: 20px;
   font-weight: 600;
   color: white;

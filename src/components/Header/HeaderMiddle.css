@@ -1,0 +1,34 @@
+.headerMiddle{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    color: white;
+}
+.headerMiddle a{
+    text-decoration: none;
+    color: white;
+}
+.headerOptions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 25px;
+}
+.headerOptions:hover {
+    background-color: grey;
+    cursor: pointer;
+    border-radius: 10px;
+    align-items: center;
+    padding: 0 25px;
+    border-bottom: none;
+}
+@media (max-width:576px) {
+    .headerMiddle{
+        display: none;
+    }
+}
+@media (max-width:992px) {
+    .headerMiddle{
+        display: none;
+    }
+}
