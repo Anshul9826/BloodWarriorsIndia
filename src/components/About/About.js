@@ -7,3 +7,5 @@ export class About extends Component {
 }
 
 export default About;
+
+Surprise Surprise Motherfucker :)
