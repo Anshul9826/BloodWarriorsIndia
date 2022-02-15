@@ -3,6 +3,7 @@ import "./Header.css";
 import HeaderMiddle from "./HeaderMiddle";
 import SideMenu from "../SideMenu/SideMenu";
 import Login from "../User/Login";
+import Register from "../User/Register/Register";
 
 function Header(props) {
   return (
@@ -17,8 +18,11 @@ function Header(props) {
         </div>
         <HeaderMiddle />
         <div className="headerRight">
-          <div className="logoutBtn d-flex align-items-center me-3 p-1">
-          <Login logo={props.logo}/>
+          <div className="loginBtn me-3 p-1">
+            <Login logo={props.logo} />
+          </div>
+          <div className="registerBtn d-flex flex-column align-items-center me-3 p-1">
+            <Register />
           </div>
         </div>
         <div className="menuIcon">

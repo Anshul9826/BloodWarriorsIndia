@@ -1,9 +1,22 @@
 .header {
   background-color: black;
-  padding: 5px;
+  padding: 10px;
   box-shadow: 5px 5px 5px 2px rgba(255, 0, 0, 0.5);
 }
-.logoutBtn:hover{
+.loginBtn:hover{
+  background-color: grey;
+    cursor: pointer;
+    border-radius: 10px;
+    align-items: center;
+    padding: 0 25px;
+    border-bottom: none;
+}
+.registerBtn a{
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+.registerBtn:hover{
   background-color: grey;
     cursor: pointer;
     border-radius: 10px;

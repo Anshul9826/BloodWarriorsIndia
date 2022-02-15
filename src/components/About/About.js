@@ -1,10 +1,8 @@
-import React from 'react'
+import React from "react";
 import "./About.css";
 
 function About() {
-  return (
-    <div>About page bhi rahul dega.</div>
-  )
+  return <div></div>;
 }
 
-export default About
+export default About;

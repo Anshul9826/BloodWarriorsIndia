@@ -19,11 +19,11 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
-  dateOfBirth: {
-    type: Date,
-    required: true,
-    trim: true,
-  },
+  // dateOfBirth: {
+  //   type: Date,
+  //   required: true,
+    // trim: true,
+  // },
   bloodGroup: {
     type: String,
     required: true,
@@ -32,12 +32,10 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
-  address: [
-    {
-      type: String,
-      required: true,
-    },
-  ],
+  address: {
+    type: String,
+    required:true,
+  }
 });
 const User = mongoose.model("user", UserSchema);
 module.exports = User;
