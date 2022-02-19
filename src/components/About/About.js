@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import Map from "../Map/Map";
 import "./About.css";
 
+<<<<<<< HEAD
 
 function About() {
     return (
@@ -102,3 +104,22 @@ function About() {
 
             export default About;
 
+=======
+function About(props) {
+  const [coords, setCoords] = useState({});
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(
+      ({ coords: { latitude, longitude } }) => {
+        setCoords({ lat: latitude, lng: longitude });
+      }
+    );
+  }, []);
+  return (
+    <div>
+      <Map setCoords={setCoords} coords={coords} />
+    </div>
+  );
+}
+
+export default About;
+>>>>>>> d5a531440e9e871fcebabb8065c31b287a0be38a
