@@ -19,7 +19,11 @@ router.post(
     body("password", "Password must be atleast 5 characters").isLength({min: 5}),
     body("bloodGroup", "Enter a valid bloodGroup").isLength({ min: 2}),
     body("gender", "Enter a valid gender").isLength({ min: 3 }),
-    body("address", "Enter a valid address").isLength({ min: 3 }),
+    body("country", "Enter a valid country").isLength({ min: 3 }),
+    body("state", "Enter a valid state").isLength({ min: 3 }),
+    body("pinCode", "Enter a valid pincode").isLength({ min: 3 }),
+    body("city", "Enter a valid city").isLength({ min: 3 }),
+    body("street", "Enter a valid street").isLength({ min: 3 }),
     // body("dateOfbirth", "Enter a valid date of Birth").isDate(),
   ],
   async (req, res) => {
@@ -49,7 +53,11 @@ router.post(
         dateOfBirth: req.body.dateOfBirth,
         bloodGroup: req.body.bloodGroup,
         gender: req.body.gender,
-        address: req.body.address,
+        city: req.body.city,
+        country: req.body.country,
+        state: req.body.state,
+        pinCode: req.body.pinCode,
+        street: req.body.street,
       });
       const data = {
         user: {
@@ -70,8 +78,8 @@ router.post(
 router.post(
   "/login",
   [
-    body("email", "Enter a valid email").isEmail(),
-    body("password", "Password cannot be blank").exists(),
+    body("email", "Enter a valid email !").isEmail(),
+    body("password", "Password is required !").exists(),
   ],
   async (req, res) => {
     // If there are errors , return bad request and the errors

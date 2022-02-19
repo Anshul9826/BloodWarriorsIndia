@@ -11,18 +11,18 @@
     padding: 0 25px;
     border-bottom: none;
 }
-.registerBtn a{
+.registerBtn a {
   color: white;
   font-weight: 600;
   text-decoration: none;
 }
-.registerBtn:hover{
+.registerBtn:hover {
   background-color: grey;
-    cursor: pointer;
-    border-radius: 10px;
-    align-items: center;
-    padding: 0 25px;
-    border-bottom: none;
+  cursor: pointer;
+  border-radius: 10px;
+  align-items: center;
+  padding: 0 25px;
+  border-bottom: none;
 }
 .headerRight{
   display:flex;

@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import LoginIcon from "@mui/icons-material/Login";
 import { Button } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Register from "./Register/Register";
 
 const style = {
@@ -12,7 +12,7 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 600,
+  width: 500,
   bgcolor: "black",
   borderRadius: 5,
   border: "2px solid #000",
@@ -26,16 +26,43 @@ function Login(props) {
   const [open, setOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [formErrors, setFormErrors] = useState("");
+
+  let navigate = useNavigate();
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    handleClose();
+    const response = await fetch("http://localhost:5000/api/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    });
+    const json = await response.json();
+    console.log(json);
+    if (json.success) {
+      localStorage.setItem("token", json.authtoken);
+      navigate("/about");
+      handleClose();
+      setEmail("");
+      setPassword("");
+    } else {
+      setFormErrors(json.error);
+    }
   };
   return (
     <>
-      <div className="d-flex flex-column align-items-center" onClick={handleOpen}>
+      <div
+        className="d-flex flex-column align-items-center"
+        onClick={handleOpen}
+      >
         <LoginIcon fontSize="large" style={{ color: "red" }} />
         <h6 className="mb-0" style={{ color: "white" }}>
           Login
@@ -58,16 +85,32 @@ function Login(props) {
             </div>
             <input
               type="email"
-              placeholder="Enter email or Username"
+              name="email"
+              placeholder="Enter email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
             />
             <input
               type="password"
-              placeholder="Password"
+              name="password"
+              placeholder="Enter password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
             />
+            <p
+              className="mt-2 mb-0 px-1"
+              style={{
+                backgroundColor: "lightpink",
+                color: "red",
+                width: "100%",
+              }}
+            >
+              {formErrors}
+            </p>
             <Button id="loginBtn" type="submit" onClick={handleSubmit}>
               Login
             </Button>
@@ -75,7 +118,7 @@ function Login(props) {
               Forgot Password?
             </Link>
             <h6 className="my-2">Or Login with</h6>
-            <div className="d-flex mb-2 my-2">
+            <div className="d-flex mb-3 my-2">
               <img
                 className="me-3 ms-3 assetIcons"
                 src="/facebookIcon.png"
@@ -89,13 +132,10 @@ function Login(props) {
                 style={{ width: "40px", height: "40px" }}
               />
             </div>
-            <p
-              className="d-flex my-2"
-              style={{ fontSize: "14px", padding: "0" }}
-            >
-              Don't have account?
-              <Register value={"Register"} />
-            </p>
+            <p style={{ fontSize: "14px", margin: "0" }}>Don't have account?</p>
+            <div id="loginBtn" style={{ width: "100%", marginBottom: "5px" }}>
+              <Register title={"Register"} />
+            </div>
           </form>
         </Box>
       </Modal>

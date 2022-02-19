@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
-import { Button } from "@mui/material";
+import {
+  Button,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+} from "@mui/material";
 import Modal from "@mui/material/Modal";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
-import BloodGroup from "./BloodGroup";
-import PersonAddIcon from "@mui/icons-material/PersonAdd";
-import Gender from "./Gender";
-import DOB from "./DOB";
 
 const style = {
   position: "absolute",
@@ -24,18 +26,57 @@ const style = {
   p: 1,
 };
 
-function Register(props) {
+function Register({ Icon, title },props) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [dateOfBirth, setDateOfBirth] = useState("");
+  const [bloodGroup, setbloodGroup] = useState("");
+  const [gender, setGender] = useState("");
+  const [country, setCountry] = useState("");
+  const [state, setState] = useState("");
+  const [pinCode, setPinCode] = useState("");
+  const [city, setCity] = useState("");
+  const [street, setStreet] = useState("");
+
+  let navigate = useNavigate();
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     handleClose();
+    const response = await fetch("http://localhost:5000/api/auth/createuser", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        firstName,
+        lastName,
+        email,
+        password,
+        dateOfBirth,
+        bloodGroup,
+        gender,
+        country,
+        state,
+        pinCode,
+        street,
+        city,
+      }),
+    });
+    const json = await response.json();
+    console.log(json);
+    if (json.success) {
+      localStorage.setItem("token", json.authtoken);
+      navigate("/");
+      alert("Account created successfully!");
+    } else {
+      alert("Please fill the form correctly!");
+    }
   };
   return (
     <>
@@ -43,9 +84,9 @@ function Register(props) {
         className="d-flex flex-column align-items-center"
         onClick={handleOpen}
       >
-        <PersonAddIcon fontSize="large" style={{ color: "red" }} />
+        {Icon && <Icon fontSize="large" style={{ color: "red" }} />}
         <h6 className="mb-0" style={{ color: "white" }}>
-          Sign Up
+          {title}
         </h6>
       </div>
       <Modal
@@ -58,11 +99,12 @@ function Register(props) {
           <form className="registerForm" onSubmit={handleSubmit}>
             <div className="nameSection">
               <input
-              className="ms-0"
+                className="ms-0"
                 type="name"
                 placeholder="First Name"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
+                required
               />
               <input
                 className="me-0"
@@ -70,6 +112,7 @@ function Register(props) {
                 placeholder="Last Name"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
+                required
               />
             </div>
             <input
@@ -77,17 +120,116 @@ function Register(props) {
               placeholder="Email or Mobile number"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
             <input
               type="password"
               placeholder="Create Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              required
             />
-            <div className="d-flex align-items-center justify-content-between" style={{width:"100%"}}>
-            <Gender/>
-            <BloodGroup/>
-            <DOB/>
+            <div className="d-flex my-1 justify-content-between" style={{width:"100%"}}>
+              <FormControl variant="filled" sx={{ minWidth: 160}}>
+                <InputLabel id="demo-simple-select-label">Gender</InputLabel>
+                <Select
+                  style={{ backgroundColor: "white" }}
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  lable="Gender"
+                  value={gender}
+                  onChange={(e) => setGender(e.target.value)}
+                  required
+                >
+                  {options.map((option, i) => (
+                    <MenuItem key={i} value={option.value}>
+                      {option.label}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+              <FormControl variant="filled" sx={{ minWidth: 160}}>
+                <InputLabel id="demo-simple-select-label">
+                  Blood Group
+                </InputLabel>
+                <Select
+                  style={{ backgroundColor: "white" }}
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  lable="Blood Group"
+                  value={bloodGroup}
+                  onChange={(e) => setbloodGroup(e.target.value)}
+                  required
+                >
+                  {bloodOptions.map((items, i) => (
+                    <MenuItem key={i} value={items.value}>
+                      {items.label}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+              <div className="">
+                <input
+                className="m-0 p-3"
+                  type="date"
+                  id="dob"
+                  name="dateOfBirth"
+                  value={dateOfBirth}
+                  onChange={(e) => setDateOfBirth(e.target.value)}
+                  required
+                />
+              </div>
+            </div>
+            <div style={{ width: "100%" }}>
+              <div className="d-flex">
+                <input
+                  className="ms-0"
+                  type="name"
+                  name="country"
+                  placeholder="Country"
+                  value={country}
+                  onChange={(e) => setCountry(e.target.value)}
+                  required
+                />
+                <input
+                  className="me-0"
+                  type="name"
+                  name="state"
+                  placeholder="State"
+                  value={state}
+                  onChange={(e) => setState(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="d-flex">
+                <input
+                  className="ms-0"
+                  type="name"
+                  name="pinCode"
+                  placeholder="Pin Code"
+                  value={pinCode}
+                  onChange={(e) => setPinCode(e.target.value)}
+                  required
+                />
+                <input
+                  className="me-0"
+                  type="name"
+                  name="city"
+                  placeholder="City"
+                  value={city}
+                  onChange={(e) => setCity(e.target.value)}
+                  required
+                />
+              </div>
+              <input
+                className="ms-0"
+                type="name"
+                name="street"
+                placeholder="Street"
+                value={street}
+                onChange={(e) => setStreet(e.target.value)}
+                required
+              />
             </div>
             <p className="my-2 p-0" style={{ fontSize: "13px" }}>
               By clicking Sign Up, you agree to our <Link to="/">Terms</Link> ,{" "}
@@ -122,4 +264,56 @@ function Register(props) {
   );
 }
 
+const options = [
+  {
+    label: "Male",
+    value: "Male",
+  },
+  {
+    label: "Female",
+    value: "Female",
+  },
+  {
+    label: "Trans",
+    value: "Trans",
+  },
+  {
+    label: "Other",
+    value: "Other",
+  },
+];
+const bloodOptions = [
+  {
+    label: "A+",
+    value: "A+",
+  },
+  {
+    label: "A-",
+    value: "A-",
+  },
+  {
+    label: "B+",
+    value: "B+",
+  },
+  {
+    label: "B-",
+    value: "B-",
+  },
+  {
+    label: "AB-",
+    value: "AB-",
+  },
+  {
+    label: "AB+",
+    value: "AB+",
+  },
+  {
+    label: "O+",
+    value: "O+",
+  },
+  {
+    label: "O-",
+    value: "O-",
+  },
+];
 export default Register;
