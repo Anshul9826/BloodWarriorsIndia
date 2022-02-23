@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import MenuIcon from "@mui/icons-material/Menu";
-
 function SideMenu() {
   const [state, setState] = React.useState({
     right: false,
@@ -28,7 +27,6 @@ function SideMenu() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-       
       </List>
     </Box>
   );

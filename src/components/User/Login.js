@@ -5,7 +5,7 @@ import Modal from "@mui/material/Modal";
 import LoginIcon from "@mui/icons-material/Login";
 import { Button } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-import Register from "./Register/Register";
+import SignUp from "./Register/SignUp";
 
 const style = {
   position: "absolute",
@@ -134,7 +134,7 @@ function Login(props) {
             </div>
             <p style={{ fontSize: "14px", margin: "0" }}>Don't have account?</p>
             <div id="loginBtn" style={{ width: "100%", marginBottom: "5px" }}>
-              <Register title={"Register"} />
+              <SignUp title={"Create an account"} />
             </div>
           </form>
         </Box>
