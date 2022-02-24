@@ -1,7 +1,6 @@
 import React from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
-import About from "../About/About";
 
 function Home(props) {
   return (
@@ -45,7 +44,6 @@ function Home(props) {
             />
           </div>
         </div>
-        <About />
       </div>
     </>
   );
