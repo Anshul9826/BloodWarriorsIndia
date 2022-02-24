@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import FindDonar from "./components/Donor/FindDonor";
 import Sponsors from "./components/Sponsors/Sponsors";
 import DonateNow from "./components/Donate/DonateNow";
+import Communities from "./components/Communities/Communities";
 
 function App() {
   
@@ -20,6 +21,7 @@ function App() {
             <Route exact path="/donate" element={<DonateNow />} />
             <Route exact path="/sponsors" element={<Sponsors />} />
             <Route exact path="/find_donar" element={<FindDonar />} />
+            <Route exact path="/community" element={<Communities />} />
           </Routes>
         </Router>
     </>

@@ -41,7 +41,9 @@ function Home(props) {
 
 >>>>>>> 7bbe315cbe811132c998c80e493c87d520cdfccc
             <h1>
-              <strong style={{ fontSize: "3rem" }}>With..</strong>
+              <strong style={{ fontFamily: "Kalam", fontSize: "3rem" }}>
+                With..
+              </strong>
             </h1>
             <img
               src={props.logo}
@@ -69,17 +71,11 @@ function Home(props) {
             </Link>
           </div>
           <div className="asset-1 d-flex align-items-center">
-            <img
-              src="assets/asset1.jpg"
-              alt="asset"
-            />
+            <img src="assets/asset1.jpg" alt="asset" />
           </div>
         </section>
-        <section className="section-2 d-flex my-2 mx-4">
-          <img
-            src="assets/volunteerBg.png"
-            alt="volunteerBG"
-          />
+        <section className="section-2 d-flex my-2 p-2">
+          <img src="assets/volunteerBG.jpg" alt="volunteerBG" />
           <div className="section-2-text d-flex flex-column align-items-center justify-content-center ms-auto p-4">
             <h3>
               “Everybody can be great. Because anybody can serve. You don’t have
@@ -98,30 +94,27 @@ function Home(props) {
           <div className="section-3-text d-flex flex-column align-items-center p-4">
             <h3>
               “One of the marvelous things about community is that it enables us
-              to welcome and help people in a way we couldn’t as individuals.
-              When we pool our strength and share the work and responsibility,
-              we can welcome many people, even those in deep distress, and
-              perhaps help them find self-confidence and inner healing.”
+              to welcome and help people in a way we couldn’t as individuals.”
             </h3>
-            <h5 className="me-auto">– Jean Vanier</h5>
+            <h5 className="me-auto mt-2">– Jean Vanier</h5>
             <p className="my-3">
               Make your own community on the{" "}
               <strong>Blood Warriors India</strong> platform.
             </p>
-            <Link to="/donate" className="btn btn-lg">
+            <Link to="/community" className="btn btn-lg">
               Register Your Community
             </Link>
           </div>
         </section>
         <section className="section-4 d-flex my-2 p-4">
-          <img src="/assets/sponsorsBg.png" alt="sponsorsBG" />
+          <img src="/assets/sponsorsBG.jpg" alt="sponsorsBG" />
           <div className="section-4-text d-flex flex-column align-items-center p-4">
             <h3>
               "We know only too well that what we are doing is nothing more than
               a drop in the ocean. But if the drop were not there, the ocean
               would be missing something."
             </h3>
-            <h5 className="ms-auto">- Mother Teresa</h5>
+            <h5 className="ms-auto mt-2">- Mother Teresa</h5>
             <p className="my-3">
               Become a sponsor and serve by giving some gifts from yourside to
               them, who are contributing their precious time, effort and part of
