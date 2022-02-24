@@ -32,14 +32,14 @@
 .unique-section {
   width: 700px;
 }
-.section-2 {
+.section2 {
   background: url("/public/image/bg1.jpg") no-repeat center center/cover;
   position: relative;
   height: 80vh;
   border-radius: 10px;
   box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.5);
 }
-.section-2-text {
+.section2-text {
   width: 400px;
   position: absolute;
   top: 10%;
@@ -65,10 +65,10 @@
   .unique-section {
     width: 350px;
   }
-  .section-2 {
+  .section2 {
     flex-direction: column;
   }
-  .section-2-text {
+  .section2-text {
     top: 0;
     left: 0;
     width: 300px;

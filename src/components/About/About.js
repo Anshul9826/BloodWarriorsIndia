@@ -55,8 +55,8 @@ function About() {
             side.{" "}
           </h5>
         </div>
-        <div className="section-2 d-flex m-4">
-          <div className="section-2-text mx-4 d-flex flex-column align-items-center">
+        <div className="section2 d-flex m-4">
+          <div className="section2-text mx-4 d-flex flex-column align-items-center">
             <h1>
               Our Mission <i className="fa-solid fa-hand-holding-droplet"></i>
             </h1>
@@ -68,7 +68,7 @@ function About() {
               can be redeemed by the donor at any local buisness(or sponsor) in
               exchange of discount and promotions.
             </h5>
-            <p>
+            <h6>
               In this way we are creating a virtual circle of value exchange
               between three parties{" "}
               <ol type="1">
@@ -76,7 +76,7 @@ function About() {
                 <li id="id">Donation centres</li>
                 <li id="id">Local buisness/Sponsors</li>
               </ol>
-            </p>
+            </h6>
           </div>
         </div>
         <div className="section3 d-flex align-items-center p-4">
