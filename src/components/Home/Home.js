@@ -64,7 +64,7 @@ function Home(props) {
               Make your own community on the{" "}
               <strong>Blood Warriors India</strong> platform.
             </p>
-            <Link to="/community" className="btn btn-lg">
+            <Link to="/communities" className="btn btn-lg">
               Register Your Community
             </Link>
           </div>
@@ -85,7 +85,7 @@ function Home(props) {
               <strong> so that someone can actually have a life.</strong>
             </p>
             <div>
-              <Link to="/donate" className="btn btn-lg">
+              <Link to="/sponsor_register" className="btn btn-lg">
                 Become a Sponser
               </Link>
             </div>

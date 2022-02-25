@@ -1,32 +1,76 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Header.css";
-import HeaderMiddle from "./HeaderMiddle";
-import SideMenu from "../SideMenu/SideMenu";
+import SideMenu from "./SideMenu/SideMenu";
 import Login from "../User/Login";
 import Register from "../User/Register/SignUp";
+import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
+import InfoIcon from "@mui/icons-material/Info";
+import VolunteerActivismRoundedIcon from "@mui/icons-material/VolunteerActivismRounded";
+import LocationOnRoundedIcon from "@mui/icons-material/LocationOnRounded";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import LogoutIcon from "@mui/icons-material/Logout";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 
 function Header(props) {
   let navigate = useNavigate();
-  const handleLogout=()=>{
-    localStorage.removeItem('token');
+  const handleLogout = () => {
+    localStorage.removeItem("token");
     navigate("/");
-  }
+  };
+  let location = useLocation();
+  useEffect(() => {
+    //
+  }, [location]);
   return (
     <>
-      <nav className="header d-flex align-items-center justify-content-between sticky-top">
-        <div className="headerLeft d-flex align-items-center ms-2">
+      <nav className="header d-flex align-items-center  sticky-top">
+        <div className="headerLeft d-flex align-items-center me-auto">
           <img
             src={props.logo}
             alt="Blood Warriors India"
             style={{ width: "120px", cursor: "pointer" }}
           />
         </div>
-        <HeaderMiddle />
+        <div className="headerMiddle">
+          <Link
+            className={`headerOptions ${
+              location.pathname === "/" ? "active" : ""
+            }`}
+            to="/"
+          >
+            <HomeRoundedIcon fontSize="large" />
+            <h6>Home</h6>
+          </Link>
+          <Link
+            className={`headerOptions ${
+              location.pathname === "/about" ? "active" : ""
+            }`}
+            to="/about"
+          >
+            <InfoIcon fontSize="large" />
+            <h6>About Us</h6>
+          </Link>
+          <Link
+            className={`headerOptions ${
+              location.pathname === "/donate" ? "active" : ""
+            }`}
+            to="/donate"
+          >
+            <VolunteerActivismRoundedIcon fontSize="large" />
+            <h6>Donate Now</h6>
+          </Link>
+          <Link
+            className={`headerOptions ${
+              location.pathname === "/find_donors" ? "active" : ""
+            }`}
+            to="/find_donors"
+          >
+            <LocationOnRoundedIcon fontSize="large" />
+            <h6>Find Donar</h6>
+          </Link>
+        </div>
         {!localStorage.getItem("token") ? (
-          <div className="headerRight">
+          <div className="headerRight ms-auto">
             <div className="loginBtn me-3 p-1">
               <Login logo={props.logo} showAlert={props.showAlert} />
             </div>

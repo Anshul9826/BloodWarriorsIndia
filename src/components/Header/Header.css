@@ -3,6 +3,41 @@
   padding: 10px;
   box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.5);
 }
+.headerMiddle{
+  color: white;
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+.headerMiddle a{
+  text-decoration: none;
+  color: white;
+}
+.headerOptions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 25px;
+}
+.headerOptions .MuiSvgIcon-root{
+  color: lightgrey;
+}
+.headerOptions:hover {
+  background-color: grey;
+  cursor: pointer;
+  border-radius: 10px;
+  align-items: center;
+  padding: 0 25px;
+  border-bottom: none;
+}
+.active .MuiSvgIcon-root{
+  color: red;
+}
+.headerRight{
+  display:flex;
+  align-items:center; 
+  margin-right: 10px;
+}
 .loginBtn:hover{
   background-color: grey;
     cursor: pointer;
@@ -24,38 +59,15 @@
   padding: 0 25px;
   border-bottom: none;
 }
-.headerRight{
-  display:flex;
-  align-items:center; 
-  margin-right: 10px;
-}
-.menuIcon{
-  display: none;
+.menuIcon:hover{
+  background-color: grey;
+  cursor: pointer;
 }
 @media (max-width:576px) {
-  .header{
-    box-shadow: none;
-  }
-  .headerRight{
-    display: none;
-  }
-  .menuIcon{
-    display: block;
-  }
-  .menuIcon:hover{
-    background-color: grey;
-    cursor: pointer;
-  }
+  
 }
 @media (max-width:992px) {
-  .headerRight{
+  .headerMiddle{
     display: none;
-  }
-  .menuIcon{
-    display: block;
-  }
-  .menuIcon:hover{
-    background-color: grey;
-    cursor: pointer;
   }
 }
