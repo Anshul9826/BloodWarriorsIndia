@@ -8,22 +8,23 @@ import FindDonar from "./components/Donor/FindDonor";
 import Sponsors from "./components/Sponsors/Sponsors";
 import DonateNow from "./components/Donate/DonateNow";
 import Communities from "./components/Communities/Communities";
+import Footer from "./components/Footer/Footer";
 
 function App() {
-  
   return (
     <>
-        <Router>
-          <Header logo={logo}/>
-          <Routes>
-            <Route exact path="/" element={<Home logo={logo} />} />
-            <Route exact path="/about" element={<About logo={logo} />} />
-            <Route exact path="/donate" element={<DonateNow />} />
-            <Route exact path="/sponsors" element={<Sponsors />} />
-            <Route exact path="/find_donors" element={<FindDonar />} />
-            <Route exact path="/communities" element={<Communities />} />
-          </Routes>
-        </Router>
+      <Router>
+        <Header logo={logo} />
+        <Routes>
+          <Route exact path="/" element={<Home logo={logo} />} />
+          <Route exact path="/about" element={<About logo={logo} />} />
+          <Route exact path="/donate" element={<DonateNow />} />
+          <Route exact path="/sponsors" element={<Sponsors />} />
+          <Route exact path="/find_donar" element={<FindDonar />} />
+          <Route exact path="/community" element={<Communities />} />
+        </Routes>
+        <Footer />
+      </Router>
     </>
   );
 }
