@@ -69,7 +69,7 @@ function Home(props) {
             </Link>
           </div>
         </section>
-        <section className="section-4 d-flex my-2 p-4">
+        <section className="section-4 d-flex mt-2 p-4">
           <img src="/assets/sponsorsBG.jpg" alt="sponsorsBG" />
           <div className="section-4-text d-flex flex-column align-items-center p-4">
             <h3>

@@ -8,7 +8,7 @@ function About() {
         <div className=" d-flex align-items-center my-3 m-auto">
           <h1>
             About <span style={{ color: "red" }}>Blood</span> Warriors{" "}
-            <span style={{ color: "orange" }}>In</span>
+            <span style={{ color: "orange" }}>In</span> 
             <span style={{ color: "blue" }}>d</span>
             <span style={{ color: "green" }}>ia</span>
           </h1>
