@@ -1,15 +1,15 @@
-a {
+.sidemenu a {
   text-decoration: none;
   color: white;
 }
-li{
-  margin: 5px;
+.list{
+  padding: 5px;
 }
-li h6{
+.list h6{
   margin-left: 5px;
   margin-bottom: 0;
 }
-li:hover {
+.list:hover {
   background-color: grey;
   color: white;
   cursor: pointer;

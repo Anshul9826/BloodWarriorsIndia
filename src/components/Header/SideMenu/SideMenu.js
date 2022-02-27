@@ -40,13 +40,13 @@ function SideMenu() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
+      <List className="sidemenu">
         <div className="menu-first">
           <Link
             className={` ${location.pathname === "/" ? "active" : ""}`}
             to="/"
           >
-            <ListItem>
+            <ListItem className="list">
               <HomeRoundedIcon fontSize="large" />
               <h6>Home</h6>
             </ListItem>
@@ -55,7 +55,7 @@ function SideMenu() {
             className={` ${location.pathname === "/about" ? "active" : ""}`}
             to="/about"
           >
-            <ListItem>
+            <ListItem className="list">
               <InfoIcon fontSize="large" />
               <h6>About Us</h6>
             </ListItem>
@@ -64,7 +64,7 @@ function SideMenu() {
             className={` ${location.pathname === "/donate" ? "active" : ""}`}
             to="/donate"
           >
-            <ListItem>
+            <ListItem className="list">
               <VolunteerActivismRoundedIcon fontSize="large" />
               <h6>Donate Now</h6>
             </ListItem>
@@ -75,7 +75,7 @@ function SideMenu() {
             }`}
             to="/find_donors"
           >
-            <ListItem>
+            <ListItem className="list">
               <LocationOnRoundedIcon fontSize="large" />
               <h6>Find Donar</h6>
             </ListItem>
@@ -85,7 +85,7 @@ function SideMenu() {
           className={`${location.pathname === "/sponsors" ? "active" : ""}`}
           to="/sponsors"
         >
-          <ListItem>
+          <ListItem className="list">
             <StorefrontRoundedIcon fontSize="large" />
             <h6>Redeem Coins</h6>
           </ListItem>
@@ -94,7 +94,7 @@ function SideMenu() {
           className={`${location.pathname === "/communities" ? "active" : ""}`}
           to="/communities"
         >
-          <ListItem>
+          <ListItem className="list">
             <PeopleRoundedIcon fontSize="large" />
             <h6>Communities</h6>
           </ListItem>

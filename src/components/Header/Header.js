@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect} from "react";
 import "./Header.css";
 import SideMenu from "./SideMenu/SideMenu";
-import Login from "../User/Login";
-import Register from "../User/Register/SignUp";
+import LoginIcon from "@mui/icons-material/Login";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import InfoIcon from "@mui/icons-material/Info";
 import VolunteerActivismRoundedIcon from "@mui/icons-material/VolunteerActivismRounded";
@@ -10,27 +9,37 @@ import LocationOnRoundedIcon from "@mui/icons-material/LocationOnRounded";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { useNavigate, Link, useLocation } from "react-router-dom";
+import userContext from "../../Store/User/UserContext";
+import { ToastContainer, toast } from "react-toastify";
+import { Avatar } from "@mui/material";
 
 function Header(props) {
   let navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem("token");
-    navigate("/");
+    toast.success("Loggedout successfully!");
+    setTimeout(() => {
+      navigate("/");
+    }, 2500);
   };
   let location = useLocation();
   useEffect(() => {
     //
   }, [location]);
+
+  const user = useContext(userContext);
+
   return (
     <>
       <nav className="header d-flex align-items-center  sticky-top">
-        <div className="headerLeft d-flex align-items-center me-auto">
+      <ToastContainer/>
+        <Link className="headerLeft d-flex align-items-center me-auto" to="/">
           <img
             src={props.logo}
             alt="Blood Warriors India"
             style={{ width: "120px", cursor: "pointer" }}
           />
-        </div>
+        </Link>
         <div className="headerMiddle">
           <Link
             className={`headerOptions ${
@@ -71,23 +80,29 @@ function Header(props) {
         </div>
         {!localStorage.getItem("token") ? (
           <div className="headerRight ms-auto">
-            <div className="loginBtn me-3 p-1">
-              <Login logo={props.logo} showAlert={props.showAlert} />
-            </div>
-            <div className="registerBtn d-flex flex-column align-items-center me-3 p-1">
-              <Register
-                Icon={PersonAddIcon}
-                title={"Sign Up"}
-                showAlert={props.showAlert}
-              />
-            </div>
+            <Link className="loginBtn me-3 p-1" to="/login">
+              <LoginIcon fontSize="large" style={{ color: "red" }} />
+              <h6 className="mb-0">Login</h6>
+            </Link>
+            <Link className="loginBtn me-3 p-1" to="/signup">
+              <PersonAddIcon fontSize="large" style={{ color: "red" }} />
+              <h6 className="mb-0">Sign Up</h6>
+            </Link>
           </div>
         ) : (
-          <div className="loginBtn me-3 p-1" onClick={handleLogout}>
-            <LogoutIcon fontSize="large" style={{ color: "red" }} />
-            <h6 className="mb-0" style={{ color: "white" }}>
-              Logout
-            </h6>
+          <div className="d-flex align-items-center">
+            <div className="d-flex align-items-center">
+              <Avatar src={""} />
+              <h6 className="mb-0 ms-2 me-3" style={{ color: "white" }}>
+                {user.info.name}
+              </h6>
+            </div>
+            <div className="loginBtn me-3 p-1" onClick={handleLogout}>
+              <LogoutIcon fontSize="large" style={{ color: "red" }} />
+              <h6 className="mb-0" style={{ color: "white" }}>
+                Logout
+              </h6>
+            </div>
           </div>
         )}
         <div className="menuIcon">

@@ -3,13 +3,13 @@
   padding: 10px;
   box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.5);
 }
-.headerMiddle{
+.headerMiddle {
   color: white;
   display: flex;
   align-items: center;
   margin: auto;
 }
-.headerMiddle a{
+.headerMiddle a {
   text-decoration: none;
   color: white;
 }
@@ -19,7 +19,7 @@
   align-items: center;
   padding: 0px 25px;
 }
-.headerOptions .MuiSvgIcon-root{
+.MuiSvgIcon-root {
   color: lightgrey;
 }
 .headerOptions:hover {
@@ -30,44 +30,38 @@
   padding: 0 25px;
   border-bottom: none;
 }
-.active .MuiSvgIcon-root{
+.active .MuiSvgIcon-root {
   color: red;
 }
-.headerRight{
-  display:flex;
-  align-items:center; 
+.headerRight {
+  display: flex;
+  align-items: center;
   margin-right: 10px;
 }
-.loginBtn:hover{
-  background-color: grey;
-    cursor: pointer;
-    border-radius: 10px;
-    align-items: center;
-    padding: 0 25px;
-    border-bottom: none;
-}
-.registerBtn a {
-  color: white;
-  font-weight: 600;
+.loginBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-decoration: none;
+  color: white;
 }
-.registerBtn:hover {
+.loginBtn:hover {
   background-color: grey;
+  color: white;
   cursor: pointer;
   border-radius: 10px;
   align-items: center;
   padding: 0 25px;
   border-bottom: none;
 }
-.menuIcon:hover{
+.menuIcon:hover {
   background-color: grey;
   cursor: pointer;
 }
-@media (max-width:576px) {
-  
+@media (max-width: 576px) {
 }
-@media (max-width:992px) {
-  .headerMiddle{
+@media (max-width: 992px) {
+  .headerMiddle {
     display: none;
   }
 }
