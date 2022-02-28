@@ -12,7 +12,7 @@ function ForgotPasword(props) {
 
   const sendOtp = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:5000/api/auth/email_send", {
+    const response = await fetch("https://bloodwarriorsindia.herokuapp.com/api/auth/email_send", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

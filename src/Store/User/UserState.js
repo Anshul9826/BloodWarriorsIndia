@@ -7,7 +7,7 @@ function UserState(props) {
   });
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch("http://localhost:5000/api/auth/getuser", {
+      const response = await fetch("https://bloodwarriorsindia.herokuapp.com/api/auth/getuser", {
         method: "GET",
         headers: {
           "auth-token": localStorage.getItem("token"),

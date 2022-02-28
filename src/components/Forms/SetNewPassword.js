@@ -56,7 +56,7 @@ export default function SetNewPassword({ email }) {
     e.preventDefault();
     if (validForm()) {
       const response = await fetch(
-        "http://localhost:5000/api/auth/change_password",
+        "https://bloodwarriorsindia.herokuapp.com/api/auth/change_password",
         {
           method: "POST",
           headers: {

@@ -38,7 +38,7 @@ function Login(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (validForm()) {
-      const response = await fetch("http://localhost:5000/api/auth/login", {
+      const response = await fetch("https://bloodwarriorsindia.herokuapp.com/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

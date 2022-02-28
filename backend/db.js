@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-const mongoURI =
-  "mongodb://localhost:27017/bloodwarriorsindia?readPreference=primary&appname=MongoDB%20Compass&ssl=false";
+const mongoURI = "mongodb+srv://bloodwarriorsindia:PRVmfr6!dgcY9bc@cluster0.tnjam.mongodb.net/bloodwarriorsindia?retryWrites=true&w=majority";
 
 const connectToMongo = () => {
   mongoose.connect(mongoURI, () => {
