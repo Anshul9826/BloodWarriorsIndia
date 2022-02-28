@@ -4,8 +4,7 @@
   "description": "bloodwarriorsindia - Community for blood donars and recievers",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon server.js"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",

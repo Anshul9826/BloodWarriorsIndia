@@ -6,7 +6,6 @@ const { body, validationResult } = require("express-validator");
 const bodyparser = require("body-parser");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const { OAuth2Client } = require("google-auth-library");
 var fetchuser = require("../middleware/fetchuser");
 
 // Route 1: Create a User using : POST "/api/auth/createuser". No login required
@@ -122,19 +121,6 @@ router.post(
     }
   }
 );
-// Route 3: login using google : POST "/api/auth/googlelogin".
-// router.post(
-//   "/googlelogin",
-
-//   async (req, res) => {
-//     const {tokenId} =req.body;
-//     client.verifyIdToken({idToken: tokenId, audience: "164559736038-kc3t484u2p3c1ccersf2v9nna9mjpj9b.apps.googleusercontent.com"}).then(response=>{
-//       const {email_verified, name, email}=response.payload;
-//       console.log(response.payload);
-//     })
-//     console.log();
-//   }
-// );
 // Route 3: Get loggedin User Details using : POST "/api/auth/getuser". Login required
 
 router.get("/getuser", fetchuser, async (req, res) => {

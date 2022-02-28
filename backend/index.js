@@ -12,6 +12,6 @@ app.use(express.json())
 
 app.use('/api/auth', require('./routes/auth.js'))
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port , () => {
   console.log(`BloodWarriorsIndia app listening on port ${port}`)
 })

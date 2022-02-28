@@ -1,0 +1,54 @@
+{
+    "Donationcenters": {
+        "Donationcenter1": {
+            "name": "Maharaja Yeshwantrao Hospital",
+            "Address": "LG 9, Scheme # 54, A.B Road,M Y Road, Indore",
+            "Phone no.": "0731- 2438100, 2527947, 2438138"
+        },
+        "Donationcenter2": {
+            "name": "Arihant Hospital and Research Center",
+            "Address": "283/A Scheme # 71Gumasta Ngr, Indore",
+            "Phone no.": "08109813126"
+        },
+        "Donationcenter3": {
+            "name": "Life Line Hospital",
+            "Address": "# 14, MIG Circle Anoop Nagar A B Road, MIG Main Rd., Indore",
+            "Phone no.": "9009913786"
+        },
+        "Donationcenter4": {
+            "name": "Verma Union Hospital",
+            "Address": "#120, (Opp. Kastoor Cinema)Dhar Rd., Indore Madhya Pradesh",
+            "Phone no.": "09827025001"
+        },
+        "Donationcenter5": {
+            "name": "Allied Pathalogy lab and Blood Bank",
+            "Address": "#5, Trishul Building, (Opposite Amaltas Hotel) A B Road, Indore",
+            "Phone no.": "08109813126"
+        },
+        "Donationcenter6": {
+            "name": "Arihant Hospital and Research Center",
+            "Address": "283/A Scheme # 71Gumasta Ngr, Indore",
+            "Phone no.": "08109813126"
+        },
+        "Donationcenter7": {
+            "name": "Christian Hospital",
+            "Address": "# 2, Murai Mohalla Chhawani,Indore",
+            "Phone no.": "0731 2700196"
+        },
+        "Donationcenter8": {
+            "name": "Nobel Path and Blood Bank",
+            "Address": "Opp. Nath Mandir, South Tukoganj Indore",
+            "Phone no.": "0731- 2522970"
+        },
+        "Donationcenter9": {
+            "name": "Lifecell International Pvt Ltd",
+            "Address": "217, Second Floor, Orbit Mall AB Road, Indore",
+            "Phone no.": "0731- 4036824"
+        },
+        "Donationcenter10": {
+            "name": "Vishnuprabha Diagnostic Center & Blood Bank",
+            "Address": "3/2, Majour Jagdale MargSouth Tukoganj, Indore",
+            "Phone no.": "0731- 2511450"
+        }
+    }
+}

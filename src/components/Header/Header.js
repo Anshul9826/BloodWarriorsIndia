@@ -75,7 +75,7 @@ function Header(props) {
             to="/find_donors"
           >
             <LocationOnRoundedIcon fontSize="large" />
-            <h6>Find Donar</h6>
+            <h6>Find Donor</h6>
           </Link>
         </div>
         {!localStorage.getItem("token") ? (

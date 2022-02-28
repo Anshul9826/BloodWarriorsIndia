@@ -1,6 +1,69 @@
-.community {
-  background: url("/public/assets/communityBg.jpg") no-repeat center
-    center/cover;
-  position: relative;
-  height: 100vh;
+.communitypage{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  color: white;
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.8);
+  background-color: rgba(255, 0, 0, 0.5);
+}
+.postSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 900px;
+  background-color: rgba(255, 0, 0, 0.733);
+  background-image: linear-gradient(to right, rgba(255,255,255,0.5),rgba(255, 0, 0, 0.7), rgba(255,255,255,0.5));
+  color: white;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+.coverpic{
+  display: flex;
+  height:300px;
+}
+.coverpic img{
+  width: 900px;
+  height: 300px;
+}
+.postSectionStart {
+  width: 100%;
+}
+.postUser img{
+  background-color: black;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+}
+.postUser:hover {
+  cursor: pointer;
+}
+.dotIcon:hover {
+  background-color: black;
+  cursor: pointer;
+  border-radius: 100%;
+}
+.postBox > img {
+  width: 100%;
+  height: auto;
+}
+.likeShareComment {
+  border-top: 1px solid lightgrey;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+}
+.likeShareCommentIcon {
+  color: black;
+  margin: 10px;
+}
+.likeShareCommentIcon:hover {
+  cursor: pointer;
+  color: red;
+}
+@media (max-width:576px) {
+  .postSection{
+      border-radius: 0;
+  }
 }

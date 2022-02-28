@@ -9,8 +9,6 @@ import {
 } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-// import { GoogleLogin } from "react-google-login";
-// import axios from "axios";
 
 function SignUp(props) {
   const [firstName, setFirstName] = useState("");
@@ -26,6 +24,7 @@ function SignUp(props) {
   const [pinCode, setPinCode] = useState("");
   const [city, setCity] = useState("");
   const [street, setStreet] = useState("");
+
   let navigate = useNavigate();
 
   const [errorField, setErrorField] = useState({
@@ -160,20 +159,6 @@ function SignUp(props) {
     }
     return formIsValid;
   };
-
-  // const responseSuccessGoogle = (response) => {
-  //   console.log(response);
-  //   axios({
-  //     method: "POST",
-  //     url: "http://localhost:5000/api/auth/googlelogin",
-  //     data: { tokenId: response.tokenId },
-  //   }).then((response) => {
-  //     console.log(response);
-  //   });
-  // };
-  // const responseErrorGoogle = (response) => {
-  //   console.log(response);
-  // };
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (validForm()) {
@@ -415,16 +400,6 @@ function SignUp(props) {
           <Button id="Btn" type="submit" onClick={handleSubmit}>
             Sign Up
           </Button>
-
-          <h6 className="my-2">Or Sign Up with</h6>
-
-          {/* <GoogleLogin
-            clientId="164559736038-kc3t484u2p3c1ccersf2v9nna9mjpj9b.apps.googleusercontent.com"
-            buttonText="Google"
-            onSuccess={responseSuccessGoogle}
-            onFailure={responseErrorGoogle}
-            cookiePolicy={"single_host_origin"}
-          /> */}
           <div className="d-flex align-items-center mt-3">
             <h6 className="mb-0 me-1">Already have account?</h6>
             <Link to="/login">Login</Link>
@@ -434,7 +409,6 @@ function SignUp(props) {
     </>
   );
 }
-
 const options = [
   {
     label: "Male",

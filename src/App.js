@@ -29,7 +29,7 @@ function App() {
             <Route exact path="/donate" element={<DonateNow logo={logo}/>} />
             <Route exact path="/sponsors" element={<Sponsors />} />
             <Route exact path="/find_donors" element={<FindDonar />} />
-            <Route exact path="/communities" element={<Communities />} />
+            <Route exact path="/communities" element={<Communities logo={logo}/>} />
           </Routes>
           <Footer />
         </Router>

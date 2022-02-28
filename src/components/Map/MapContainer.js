@@ -7,7 +7,6 @@ import Map, {
   GeolocateControl,
 } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import LocationOnRoundedIcon from "@mui/icons-material/LocationOnRounded";
 
 const style = {
   width: 800,
@@ -33,8 +32,8 @@ function MapContainer() {
       mapStyle="mapbox://styles/mapbox/streets-v9"
       mapboxAccessToken={MAPBOX_TOKEN}
     >
-      <Marker longitude={22.719568} latitude={75.857727} anchor="bottom">
-        <LocationOnRoundedIcon fontSize="large" />
+      <Marker longitude={22.7177451} latitude={75.8664262} anchor="bottom"> 
+      <div><img src="./favicon.png" alt="" style={{width:"20px"}}/></div>     
       </Marker>
       <GeolocateControl position="top-left" />
       <FullscreenControl position="top-left" />
