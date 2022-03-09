@@ -185,7 +185,7 @@ const mailer = (email, otp) => {
     secure: false,
     auth: {
       user: "anshulchoubey25@gmail.com",
-      pass: "#Ac@9977",
+      pass: "",
     },
   });
 
